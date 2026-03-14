@@ -1,0 +1,94 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+  <meta charset="UTF-8">
+  <title>Joven El Señor hoy te dice</title>
+  <style>
+body {
+  font-family: 'Georgia', serif;
+  background-image: url("C:\Users\julia\OneDrive\Documentos\pagina juvenil"); /* Ajusta la ruta */
+  background-size: cover;       /* La imagen cubre toda la pantalla */
+  background-repeat: no-repeat; /* No se repite */
+  background-position: center;  /* Centrada */
+  text-align: center;
+  padding: 50px;
+  color: #4a2c2a;
+}
+    h1 {
+      color: #8b0000;
+      margin-bottom: 20px;
+    }
+    button {
+      background-color: #8b0000;
+      color: white;
+      border: none;
+      padding: 15px 30px;
+      font-size: 18px;
+      border-radius: 8px;
+      cursor: pointer;
+      transition: background-color 0.3s;
+    }
+    button:hover {
+      background-color: #b22222;
+    }
+    #frase {
+      margin-top: 30px;
+      font-size: 22px;
+      font-style: italic;
+      opacity: 0;
+      transition: opacity 1s;
+    }
+    #imagen {
+      margin-top: 20px;
+      opacity: 0;
+      transition: opacity 1s;
+    }
+    img {
+      max-width: 300px;
+      border-radius: 12px;
+      box-shadow: 0 4px 10px rgba(0,0,0,0.3);
+    }
+  </style>
+</head>
+<body>
+  <h1>Joven el Señor hoy te dice</h1>
+  <button onclick="mostrarFrase()">Recibir mensaje</button>
+  
+  <div id="frase"></div>
+  <div id="imagen"></div>
+  
+  <script>
+    const frases = [
+      "“Ya te lo he ordenado: ¡Sé fuerte y valiente! No tengas miedo ni te desanimes, porque el Señor tu Dios te acompañará dondequiera que vayas.” (Josué 1:9)",
+      "“Para los hombres es imposible, mas para Dios todo es posible.” (Mateo 19:26)",
+      "“Dios es nuestro amparo y nuestra fortaleza, nuestra ayuda segura en momentos de angustia.” (Salmo 46:1)",
+      "“El Señor es mi fuerza y mi escudo; mi corazón en él confía; de él recibo ayuda.” (Salmo 28:7)",
+      "“Pero yo siempre estoy contigo, pues tú me sostienes de la mano derecha.” (Salmo 73:23)",
+      "2 Timoteo 1:7 – “Porque Dios no nos ha dado espíritu de cobardía, sino de poder, de amor y de dominio propio.”",
+      "Jeremías 31:3 “Con amor eterno te he amado, por eso he reservado para ti mi gracia.”",
+      "Salmo 23:1 “El Señor es mi pastor, nada me falta.”",
+      "Juan 4:16“Dios es amor, y quien permanece en el amor permanece en Dios.”",
+      "Romanos 8:38-39 “Nada podrá separarnos del amor de Dios.”",
+      "Sofonías 3:17 “El Señor tu Dios está en medio de ti, poderoso salvador.”",
+      "Salmo 136:26 “Den gracias al Dios de los cielos, porque su amor es eterno.”",
+      "Isaías 54:10 “Aunque cambien los montes y las colinas, mi amor no cambiará.”",
+      "Salmo 103:17 “El amor del Señor es desde siempre y para siempre.”",
+      "Juan 3:16 “Porque tanto amó Dios al mundo que entregó a su Hijo.”"
+    ];
+
+    function mostrarFrase() {
+      const indice = Math.floor(Math.random() * frases.length);
+      const fraseDiv = document.getElementById("frase");
+      const imagenDiv = document.getElementById("imagen");
+      
+      fraseDiv.innerText = frases[indice];
+      imagenDiv.innerHTML =
+        '<img src="https://img.freepik.com/vector-gratis/ilustracion-jesus-kawaii-dibujado-mano_23-2149941607.jpg?semt=ais_hybrid&w=740&q=80" alt="Jesús sonriendo">';
+      
+      // Animación de aparición
+      fraseDiv.style.opacity = 1;
+      imagenDiv.style.opacity = 1;
+    }
+  </script>
+</body>
+</html>
